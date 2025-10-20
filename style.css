@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* Animated Background Particles */
+
 .particles {
   position: fixed;
   top: 0;
@@ -133,7 +133,7 @@ header {
   }
 }
 
-/* Main Content */
+
 main {
   position: relative;
   z-index: 10;
@@ -168,7 +168,7 @@ main {
   border-radius: 2px;
 }
 
-/* Video Grid */
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -265,7 +265,7 @@ main {
   background: linear-gradient(45deg, #45a049, #3d8b40);
 }
 
-/* CTA Section */
+
 .cta-section {
   text-align: center;
   padding: 60px 20px;
@@ -320,7 +320,7 @@ main {
   box-shadow: 0 15px 40px rgba(76, 175, 80, 0.6);
 }
 
-/* Footer */
+
 footer {
   position: relative;
   z-index: 10;
@@ -330,7 +330,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .site-title {
     font-size: 2.5rem;

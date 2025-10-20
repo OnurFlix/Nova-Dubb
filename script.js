@@ -1,4 +1,4 @@
-// Create floating particles
+
     const particlesContainer = document.getElementById('particles');
     const particleCount = 30;
 
@@ -14,7 +14,6 @@
       particlesContainer.appendChild(particle);
     }
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
