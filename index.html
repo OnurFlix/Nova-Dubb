@@ -1,38 +1,468 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Dubb | Türkçe Dublaj</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon2.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="style.css"> 
+<script src="script.js" defer></script>
+<title>Nova Dubb | Türkçe Dublaj</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0a1f0f 0%, #1a4d2e 50%, #0f3a1f 100%);
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Background Particles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  25% { transform: translateY(-100px) translateX(50px); opacity: 0.6; }
+  50% { transform: translateY(-50px) translateX(-50px); opacity: 0.3; }
+  75% { transform: translateY(-150px) translateX(30px); opacity: 0.6; }
+}
+
+/* Header */
+header {
+  position: relative;
+  z-index: 10;
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.logo-container {
+  display: inline-block;
+  position: relative;
+  animation: fadeInDown 1s ease-out;
+}
+
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 40px rgba(76, 175, 80, 0.5);
+  transition: all 0.5s ease;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 60px rgba(76, 175, 80, 0.8);
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 40px rgba(76, 175, 80, 0.5); }
+  50% { box-shadow: 0 0 60px rgba(76, 175, 80, 0.8); }
+}
+
+.site-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 25px 0 10px;
+  background: linear-gradient(45deg, #ffffff, #a0e7a0, #ffffff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite, fadeInUp 1s ease-out;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #a0e7a0;
+  font-weight: 300;
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main Content */
+main {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+  border-radius: 2px;
+}
+
+/* Video Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out both;
+}
+
+.video-card:nth-child(1) { animation-delay: 0.7s; }
+.video-card:nth-child(2) { animation-delay: 0.8s; }
+.video-card:nth-child(3) { animation-delay: 0.9s; }
+.video-card:nth-child(4) { animation-delay: 1s; }
+.video-card:nth-child(5) { animation-delay: 1.1s; }
+.video-card:nth-child(6) { animation-delay: 1.2s; }
+.video-card:nth-child(7) { animation-delay: 1.3s; }
+.video-card:nth-child(8) { animation-delay: 1.4s; }
+
+.video-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.video-card:hover::before {
+  left: 100%;
+}
+
+.video-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4CAF50;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(76, 175, 80, 0.3);
+}
+
+.video-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+  transition: all 0.3s ease;
+}
+
+.video-card:hover .video-icon {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+}
+
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  min-height: 50px;
+}
+
+.video-link {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.video-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+  background: linear-gradient(45deg, #45a049, #3d8b40);
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1s ease-out 1.5s both;
+}
+
+.cta-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 50px;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cta-button:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.6);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 2rem;
+  }
+  
+  .cta-button {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+  }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-container">
-            <img src="8bf34ff3-13ac-4c55-89ed-71107b4fe171.jpg" 
-                 alt="Nova Dubb Logo" 
-                 class="logo shake">
-            <h1 class="fade-in">Nova Dubb</h1>
-            <p class="fade-in delay-1">Türkçe Dublaj</p>
-            <p class="fade-in delay-2">Nova Dubb, çeşitli animasyonların Türkçe dublajlarını sunan bir platformdur.</p>
-        </div>
+  <!-- Animated Background -->
+  <div class="particles" id="particles"></div>
 
-        <h2 class="section-title fade-in delay-3">Popüler Dublajlarımız</h2>
-
-        <ul class="video-list">
-            <li><a href="  https://www.youtube.com/watch?v=Y0hhpQXRb34" target="_blank">EMESİS BLUE | TÜRKÇE DUBLAJ</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=efVtw-H1X3E" target="_blank">Cassidy ile Bir Röportaj</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=fCsP8OLwaqs" target="_blank">Foxy ile Bir Röportaj</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=DQPhuppFJnI" target="_blank">Bonnie ile Bir Röportaj | Türkçe Dublaj</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=yjmwLyc5hag" target="_blank">Vantuz Adam 3: Cehennemin Dibine</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=LcQIsLVDpvw" target="_blank">VANTUZ ADAM | Bölüm 1 | Türkçe Dublaj</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=91B1K_5Lx4k" target="_blank">Vantuz Adam 4: İş ya da Zevk</a></li>
-            <li><a href="  https://www.youtube.com/watch?v=apzBy75sIug" target="_blank">Vantuz Adam 2: Amerika için Emcükle!</a></li>
-        </ul>
-
-        <a href="  https://www.youtube.com/@NovaDubb/videos  " class="cta-button" target="_blank">Tüm Dublajlarımızı İzleyin</a>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-wrapper">
+        <img src="8bf34ff3-13ac-4c55-89ed-71107b4fe171.jpg" alt="Nova Dubb Logo" class="logo">
+      </div>
+      <h1 class="site-title">Nova Dubb</h1>
+      <p class="subtitle">Türkçe Dublaj</p>
+      <p class="description">
+        Çeşitli animasyonların profesyonel Türkçe dublajlarını sunan öncü platformunuz. 
+        Kaliteli içerik, özgün ses performansları ile sizi eğlenceli bir dünyaya davet ediyoruz.
+      </p>
     </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="section-header">
+      <h2 class="section-title">Popüler Dublajlarımız</h2>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-icon">🎬</div>
+        <h3 class="video-title">EMESİS BLUE | TÜRKÇE DUBLAJ</h3>
+        <a href="https://www.youtube.com/watch?v=Y0hhpQXRb34" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">🎤</div>
+        <h3 class="video-title">Cassidy ile Bir Röportaj</h3>
+        <a href="https://www.youtube.com/watch?v=efVtw-H1X3E" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">🦊</div>
+        <h3 class="video-title">Foxy ile Bir Röportaj</h3>
+        <a href="https://www.youtube.com/watch?v=fCsP8OLwaqs" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">🐰</div>
+        <h3 class="video-title">Bonnie ile Bir Röportaj | Türkçe Dublaj</h3>
+        <a href="https://www.youtube.com/watch?v=DQPhuppFJnI" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">🔥</div>
+        <h3 class="video-title">Vantuz Adam 3: Cehennemin Dibine</h3>
+        <a href="https://www.youtube.com/watch?v=yjmwLyc5hag" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">🎯</div>
+        <h3 class="video-title">VANTUZ ADAM | Bölüm 1 | Türkçe Dublaj</h3>
+        <a href="https://www.youtube.com/watch?v=LcQIsLVDpvw" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">💼</div>
+        <h3 class="video-title">Vantuz Adam 4: İş ya da Zevk</h3>
+        <a href="https://www.youtube.com/watch?v=91B1K_5Lx4k" target="_blank" class="video-link">İzle</a>
+      </div>
+
+      <div class="video-card">
+        <div class="video-icon">🇺🇸</div>
+        <h3 class="video-title">Vantuz Adam 2: Amerika için Emcükle!</h3>
+        <a href="https://www.youtube.com/watch?v=apzBy75sIug" target="_blank" class="video-link">İzle</a>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2 class="cta-title">Daha Fazla İçerik Keşfet</h2>
+      <a href="https://www.youtube.com/@NovaDubb/videos" class="cta-button" target="_blank">
+        Tüm Videolarımız
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nova Dubb. Tüm hakları saklıdır.</p>
+  </footer>
+
 </body>
 </html>
