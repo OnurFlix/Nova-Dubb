@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<link rel="stylesheet" href="style.css"> 
-<script src="script.js" defer></script>
-<title>Nova Dubb | Türkçe Dublaj</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+  <title>Nova Dubb | Türkçe Dublaj</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <canvas id="webgl-canvas"></canvas>
+  <div class="cursor-follower"></div>
   <div class="atmosphere" aria-hidden="true">
     <div class="atmosphere-layer gradient-base"></div>
     <div class="atmosphere-layer gradient-aurora"></div>
@@ -42,12 +51,14 @@
         <svg class="hero-grid" viewBox="0 0 600 600" preserveAspectRatio="none">
           <defs>
             <linearGradient id="hero-grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="rgba(160, 231, 160, 0.05)" />
+              <stop offset="0%" stop-color="rgba(57, 255, 20, 0.05)" />
               <stop offset="100%" stop-color="rgba(255, 255, 255, 0.0)" />
             </linearGradient>
           </defs>
-          <path d="M0 100 H600 M0 200 H600 M0 300 H600 M0 400 H600 M0 500 H600" stroke="url(#hero-grid-gradient)" stroke-width="1" />
-          <path d="M100 0 V600 M200 0 V600 M300 0 V600 M400 0 V600 M500 0 V600" stroke="url(#hero-grid-gradient)" stroke-width="1" />
+          <path d="M0 100 H600 M0 200 H600 M0 300 H600 M0 400 H600 M0 500 H600" stroke="url(#hero-grid-gradient)"
+            stroke-width="1" />
+          <path d="M100 0 V600 M200 0 V600 M300 0 V600 M400 0 V600 M500 0 V600" stroke="url(#hero-grid-gradient)"
+            stroke-width="1" />
         </svg>
       </div>
 
@@ -59,7 +70,7 @@
           <h1 class="site-title">Nova Dubb</h1>
           <p class="subtitle">Türkçe Dublaj</p>
           <p class="description">
-            Çeşitli animasyonların profesyonel Türkçe dublajlarını sunan öncü platformunuz. 
+            Çeşitli animasyonların profesyonel Türkçe dublajlarını sunan öncü platformunuz.
             Kaliteli içerik, özgün ses performansları ile sizi eğlenceli bir dünyaya davet ediyoruz.
           </p>
         </div>
@@ -147,4 +158,5 @@
   </div>
 
 </body>
+
 </html>
