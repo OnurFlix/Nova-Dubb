@@ -5,157 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="script.js" defer></script>
   <title>Nova Dubb | Türkçe Dublaj</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <canvas id="webgl-canvas"></canvas>
-  <div class="cursor-follower"></div>
-  <div class="atmosphere" aria-hidden="true">
-    <div class="atmosphere-layer gradient-base"></div>
-    <div class="atmosphere-layer gradient-aurora"></div>
-    <div class="atmosphere-layer gradient-radial"></div>
-    <div class="atmosphere-layer grain"></div>
-    <div class="orbit orbit-1"></div>
-    <div class="orbit orbit-2"></div>
-    <div class="orbit orbit-3"></div>
-    <div class="floating-elements">
-      <div class="float-element float-1"></div>
-      <div class="float-element float-2"></div>
-      <div class="float-element float-3"></div>
-      <div class="float-element float-4"></div>
+  <header class="hero">
+    <div class="container">
+      <img src="8bf34ff3-13ac-4c55-89ed-71107b4fe171.jpg" alt="Nova Dubb Logo" class="logo">
+      <h1 class="site-title">Nova Dubb</h1>
+      <p class="subtitle">Türkçe Dublaj</p>
+      <p class="description">
+        Çeşitli animasyonların profesyonel Türkçe dublajlarını sunan öncü platformunuz.
+        Kaliteli içerik, özgün ses performansları ile sizi eğlenceli bir dünyaya davet ediyoruz.
+      </p>
     </div>
-    <div class="matrix-rain" id="matrixRain"></div>
-    <div class="hologram-lines"></div>
-    <div class="neon-grid"></div>
-  </div>
+  </header>
 
-  <div class="particles" id="particles"></div>
+  <main>
+    <div class="container">
+      <h2 class="section-title">Popüler Dublajlarımız</h2>
 
-  <div class="page-frame">
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-icon">🎬</div>
+          <h3 class="video-title">EMESİS BLUE | TÜRKÇE DUBLAJ</h3>
+          <a href="https://www.youtube.com/watch?v=Y0hhpQXRb34" target="_blank" class="video-link">İzle</a>
+        </div>
 
-    <header class="hero">
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-glow glow-1"></div>
-        <div class="hero-glow glow-2"></div>
-        <div class="hero-ring ring-1"></div>
-        <div class="hero-ring ring-2"></div>
-        <svg class="hero-grid" viewBox="0 0 600 600" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="hero-grid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="rgba(57, 255, 20, 0.05)" />
-              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.0)" />
-            </linearGradient>
-          </defs>
-          <path d="M0 100 H600 M0 200 H600 M0 300 H600 M0 400 H600 M0 500 H600" stroke="url(#hero-grid-gradient)"
-            stroke-width="1" />
-          <path d="M100 0 V600 M200 0 V600 M300 0 V600 M400 0 V600 M500 0 V600" stroke="url(#hero-grid-gradient)"
-            stroke-width="1" />
-        </svg>
-      </div>
+        <div class="video-card">
+          <div class="video-icon">🎤</div>
+          <h3 class="video-title">Cassidy ile Bir Röportaj</h3>
+          <a href="https://www.youtube.com/watch?v=efVtw-H1X3E" target="_blank" class="video-link">İzle</a>
+        </div>
 
-      <div class="hero-inner">
-        <div class="logo-container">
-          <div class="logo-wrapper">
-            <img src="8bf34ff3-13ac-4c55-89ed-71107b4fe171.jpg" alt="Nova Dubb Logo" class="logo">
-          </div>
-          <h1 class="site-title">Nova Dubb</h1>
-          <p class="subtitle">Türkçe Dublaj</p>
-          <p class="description">
-            Çeşitli animasyonların profesyonel Türkçe dublajlarını sunan öncü platformunuz.
-            Kaliteli içerik, özgün ses performansları ile sizi eğlenceli bir dünyaya davet ediyoruz.
-          </p>
+        <div class="video-card">
+          <div class="video-icon">🦊</div>
+          <h3 class="video-title">Foxy ile Bir Röportaj</h3>
+          <a href="https://www.youtube.com/watch?v=fCsP8OLwaqs" target="_blank" class="video-link">İzle</a>
+        </div>
+
+        <div class="video-card">
+          <div class="video-icon">🐰</div>
+          <h3 class="video-title">Bonnie ile Bir Röportaj | Türkçe Dublaj</h3>
+          <a href="https://www.youtube.com/watch?v=DQPhuppFJnI" target="_blank" class="video-link">İzle</a>
+        </div>
+
+        <div class="video-card">
+          <div class="video-icon">🔥</div>
+          <h3 class="video-title">Vantuz Adam 3: Cehennemin Dibine</h3>
+          <a href="https://www.youtube.com/watch?v=yjmwLyc5hag" target="_blank" class="video-link">İzle</a>
+        </div>
+
+        <div class="video-card">
+          <div class="video-icon">🎯</div>
+          <h3 class="video-title">VANTUZ ADAM | Bölüm 1 | Türkçe Dublaj</h3>
+          <a href="https://www.youtube.com/watch?v=LcQIsLVDpvw" target="_blank" class="video-link">İzle</a>
+        </div>
+
+        <div class="video-card">
+          <div class="video-icon">💼</div>
+          <h3 class="video-title">Vantuz Adam 4: İş ya da Zevk</h3>
+          <a href="https://www.youtube.com/watch?v=91B1K_5Lx4k" target="_blank" class="video-link">İzle</a>
+        </div>
+
+        <div class="video-card">
+          <div class="video-icon">🇺🇸</div>
+          <h3 class="video-title">Vantuz Adam 2: Amerika için Emcükle!</h3>
+          <a href="https://www.youtube.com/watch?v=apzBy75sIug" target="_blank" class="video-link">İzle</a>
         </div>
       </div>
-    </header>
 
-    <main>
-      <div class="content-shell">
-        <div class="section-header">
-          <h2 class="section-title">Popüler Dublajlarımız</h2>
-          <div class="section-accent" aria-hidden="true"></div>
-        </div>
-
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🎬</div>
-            <h3 class="video-title">EMESİS BLUE | TÜRKÇE DUBLAJ</h3>
-            <a href="https://www.youtube.com/watch?v=Y0hhpQXRb34" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🎤</div>
-            <h3 class="video-title">Cassidy ile Bir Röportaj</h3>
-            <a href="https://www.youtube.com/watch?v=efVtw-H1X3E" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🦊</div>
-            <h3 class="video-title">Foxy ile Bir Röportaj</h3>
-            <a href="https://www.youtube.com/watch?v=fCsP8OLwaqs" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🐰</div>
-            <h3 class="video-title">Bonnie ile Bir Röportaj | Türkçe Dublaj</h3>
-            <a href="https://www.youtube.com/watch?v=DQPhuppFJnI" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🔥</div>
-            <h3 class="video-title">Vantuz Adam 3: Cehennemin Dibine</h3>
-            <a href="https://www.youtube.com/watch?v=yjmwLyc5hag" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🎯</div>
-            <h3 class="video-title">VANTUZ ADAM | Bölüm 1 | Türkçe Dublaj</h3>
-            <a href="https://www.youtube.com/watch?v=LcQIsLVDpvw" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">💼</div>
-            <h3 class="video-title">Vantuz Adam 4: İş ya da Zevk</h3>
-            <a href="https://www.youtube.com/watch?v=91B1K_5Lx4k" target="_blank" class="video-link">İzle</a>
-          </div>
-
-          <div class="video-card">
-            <div class="video-card-bg" aria-hidden="true"></div>
-            <div class="video-icon">🇺🇸</div>
-            <h3 class="video-title">Vantuz Adam 2: Amerika için Emcükle!</h3>
-            <a href="https://www.youtube.com/watch?v=apzBy75sIug" target="_blank" class="video-link">İzle</a>
-          </div>
-        </div>
-
-        <div class="cta-section">
-          <h2 class="cta-title">Daha Fazla İçerik Keşfet</h2>
-          <a href="https://www.youtube.com/@NovaDubb/videos" class="cta-button" target="_blank">
-            Tüm Videolarımız
-          </a>
-          <div class="cta-glow" aria-hidden="true"></div>
-        </div>
+      <div class="cta-section">
+        <h2 class="cta-title">Daha Fazla İçerik Keşfet</h2>
+        <a href="https://www.youtube.com/@NovaDubb/videos" class="cta-button" target="_blank">
+          Tüm Videolarımız
+        </a>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer>
-      <p>&copy; 2026 Nova Dubb. Tüm hakları saklıdır.</p>
-    </footer>
-  </div>
+  <footer>
+    <p>&copy; 2026 Nova Dubb. Tüm hakları saklıdır.</p>
+  </footer>
 
 </body>
 
